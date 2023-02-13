@@ -1,0 +1,9 @@
+@import './base.scss';
+@import './decor.scss';
+
+.p-button {
+  &.p-button-secondary {
+    background-color: var(--teal-400);
+    border-color: var(--teal-400);
+  }
+}
