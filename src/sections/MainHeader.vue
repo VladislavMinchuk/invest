@@ -23,10 +23,10 @@
               label: 'ESOM',
               to: '/calculation/esom',
             },
-            {
-              label: 'Neuman Wallet',
-              to: '/calculation/neuman',
-            },
+            // {
+            //   label: 'Neuman Wallet',
+            //   to: '/calculation/neuman',
+            // },
           ],
         },
       ]);

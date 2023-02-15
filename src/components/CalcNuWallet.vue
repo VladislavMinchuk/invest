@@ -1,17 +1,39 @@
 <script setup>
   import Panel from 'primevue/panel';
-  import { ref, computed } from 'vue';
+  import { ref, computed, reactive } from 'vue';
   import InputNumber from 'primevue/inputnumber';
   import Dropdown from 'primevue/dropdown';
   import Button from 'primevue/button';
   import InlineMessage from 'primevue/inlinemessage';
+  import { minValue } from '@vuelidate/validators';
+  import { useVuelidate } from '@vuelidate/core';
 
   const income = ref(0);
   const result = ref(0);
-  const deposit = ref(10);
-  const selectedStrategy = ref(3);
-  const selectedPeriod = ref(1);
   const calcMonthly = ref(false);
+
+  const acceptedStrtg = (value) => {
+    if (value === 3 && form.deposit > 9) return true;
+    if (value === 3.3 && form.deposit > 1000) return true;
+    return false;
+  };
+
+  const form = reactive({
+    deposit: 10,
+    selectedStrategy: 3,
+    selectedPeriod: 1,
+  });
+
+  const rules = {
+    deposit: { minValue: minValue(10) },
+    selectedStrategy: {
+      minValue: minValue(3),
+      acceptedStrtg,
+    },
+    selectedPeriod: { minValue: minValue(1) },
+  };
+
+  const v$ = useVuelidate(rules, form);
 
   // COMPUTED
   const strategies = computed(() => [
@@ -56,14 +78,12 @@
 
   // METHODS
   const calcPercent = () => {
-    const rate = selectedStrategy.value / 100;
+    const rate = form.selectedStrategy / 100;
 
-    result.value = calcProfit(
-      deposit.value,
-      rate,
-      selectedPeriod.value
-    ).toFixed(4);
-    income.value = (result.value - deposit.value).toFixed(4);
+    result.value = calcProfit(form.deposit, rate, form.selectedPeriod).toFixed(
+      4
+    );
+    income.value = (result.value - form.deposit).toFixed(4);
   };
 
   const calcProfit = (amount, percent, times) => {
@@ -85,7 +105,7 @@
           <span class="p-inputgroup-addon">$</span>
           <InputNumber
             inputId="deposit"
-            v-model="deposit"
+            v-model="v$.deposit.$model"
             placeholder="Deposit"
             mode="decimal"
             locale="en-US"
@@ -100,7 +120,7 @@
         <label for="strategy" class="text-sm">Strategy</label>
         <Dropdown
           inputId="strategy"
-          v-model="selectedStrategy"
+          v-model="v$.selectedStrategy.$model"
           :options="strategies"
           optionLabel="text"
           optionValue="value"
@@ -115,7 +135,7 @@
         >
         <Dropdown
           id="strategies"
-          v-model="selectedPeriod"
+          v-model="v$.selectedPeriod.$model"
           :options="period"
           optionLabel="text"
           optionValue="value"
@@ -148,6 +168,7 @@
           class="w-full md:w-min"
           label="Calculate"
           icon="pi pi-calculator"
+          :disabled="v$.$invalid"
         />
       </div>
     </div>

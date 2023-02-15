@@ -1,11 +1,11 @@
 <script setup>
-  import Numann from '@/components/CalcNuWallet.vue';
+  // import Numann from '@/components/CalcNuWallet.vue';
   import Esom from '@/components/CalcEsom.vue';
   import { computed } from 'vue';
   import { useRoute } from 'vue-router';
 
   const route = useRoute();
-  const components = { esom: Esom, neuman: Numann };
+  const components = { esom: Esom };
   const currentCalculation = computed(() => components[route.params.id]);
 </script>
 <template>

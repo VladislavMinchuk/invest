@@ -17,7 +17,7 @@
         </div>
         <div class="col-12 md:col-6 lg:col-4">
           <h4 class="mb-3">Profit calculation</h4>
-          <RouterLink to="/calculation">ESOM</RouterLink>
+          <RouterLink to="/calculation/esom">ESOM</RouterLink>
         </div>
       </div>
     </div>
