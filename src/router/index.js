@@ -19,6 +19,11 @@ const router = createRouter({
       name: 'calculation',
       component: () => import('@/views/CalcView.vue'),
     },
+    {
+      path: '/esom',
+      name: 'esom',
+      component: () => import('@/views/EsomView.vue'),
+    },
   ],
 });
 

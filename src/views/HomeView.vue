@@ -1,6 +1,7 @@
 <script setup>
-  import Button from 'primevue/button';
   import BlockAnim from '@/components/BlockAnim.vue';
+  import { RouterLink } from 'vue-router';
+
   // import ListBots from '@/sections/ListBots.vue';
 </script>
 <template>
@@ -19,7 +20,12 @@
               a successful investor in the crypto space. <br />
               Sign up today and start trading like a pro!
             </p>
-            <Button label="Get start" class="p-button-lg p-button-secondary w-full md:w-auto" />
+            <RouterLink
+              to="/esom"
+              class="p-button p-button-secondary no-underline pl-4 pr-4"
+              >Get start</RouterLink
+            >
+            <p class="text-xs">More projects coming soon ...</p>
           </div>
           <BlockAnim class="block-anim" />
         </div>

@@ -9,24 +9,24 @@
   const income = ref(0);
   const result = ref(0);
   const deposit = ref(10);
-  const selectedStrategy = ref(0.21);
+  const selectedStrategy = ref(0.22);
   const selectedPeriod = ref(1);
 
   // COMPUTED
   const strategies = computed(() => [
     {
       text: '2 hours',
-      value: 0.21,
+      value: 0.22,
       hours: 2,
     },
     {
       text: '12 hours',
-      value: 1.2,
+      value: 1.3,
       hours: 12,
     },
     {
       text: '24 hours',
-      value: 2.5,
+      value: 3,
       hours: 24,
     },
     {
