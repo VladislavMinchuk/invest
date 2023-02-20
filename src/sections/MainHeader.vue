@@ -16,6 +16,16 @@
           to: '/',
         },
         {
+          label: 'Projects',
+          icon: 'pi pi-fw pi-bitcoin',
+          items: [
+            {
+              label: 'ESOM',
+              to: '/esom',
+            },
+          ],
+        },
+        {
           label: 'Profit calculation',
           icon: 'pi pi-fw pi-calculator',
           items: [
