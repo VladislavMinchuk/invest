@@ -39,12 +39,13 @@
 <script setup>
   import { ref } from 'vue';
   import Carousel from 'primevue/carousel';
+  import locales from '@/locales';
 
   defineProps({
     heading: String,
     clickText: {
       type: String,
-      default: 'Click image to zoom',
+      default: locales.ukr.clickImageZoom,
     },
     icon: String,
     imagesArr: Array,

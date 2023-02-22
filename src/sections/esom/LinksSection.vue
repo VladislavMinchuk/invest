@@ -7,17 +7,17 @@
         class="w-full md:w-5 justify-content-center main-section__out-link p-button p-button-secondary no-underline mb-2"
       >
         <i class="pi pi-sign-in mr-1"></i>
-        Registration
+        {{ loc.ukr.registration }}
       </a>
       <router-link v-if="!isGuidePage" to="/esom" class="w-full md:w-5 justify-content-center main-section__out-link p-button p-button-info no-underline mb-2">
         <i class="pi pi-book mr-1"></i>
-        Registration guide
+        {{ loc.ukr.registrationGuide }}
       </router-link>
       <!-- <router-link to="/esom">Registration guide</router-link> -->
     </div>
-    <span class="block text-xl font-bold mb-2">Daily profit: 2.5% - 3%</span>
+    <span class="block text-xl font-bold mb-2">{{ loc.ukr.dailyProfit }}</span>
     <p class="mb-2">
-      Official website:
+      {{ loc.ukr.officialWebsite }}:
       <a
         href="https://www.esomgroup.org/"
         target="_blank"
@@ -26,7 +26,7 @@
       >
     </p>
     <p class="mb-2">
-      Web app:
+      {{ loc.ukr.webApp }}:
       <a
         href="https://www.es-glzx.com"
         target="_blank"
@@ -63,9 +63,12 @@
 <script setup>
   import { RouterLink, useRoute } from 'vue-router';
   import { computed } from 'vue';
+  import locales from '@/locales';
   
+  const loc = computed(() => locales);
   const route = useRoute();
   const isGuidePage = computed(() => route.name === 'esom');
+  // console.log(this.$primevue.config.locale);
 </script>
 
 <style lang="scss" scoped>

@@ -13,17 +13,8 @@
             </div>
           </div>
           <p class="mb-4">
-            ESOM is a cutting-edge technology business that blends digital
-            currency trading and advanced computing. Its financial quantitative
-            services are designed to aid global crypto users in achieving stable
-            and rewarding quantitative strategies. The firm has extensive
-            experience in the encryption and quantitative arena and has provided
-            services to the business communities of Bitmain and other major
-            crypto associations, spanning many countries and locations around
-            the world.
-            <span class="block text-xl font-bold pt-2"
-              >Daily profit: 2.5% - 3%</span
-            >
+            {{ loc.ukr.esom.overviewMsg }}
+            <span class="block text-xl font-bold pt-2">{{ loc.ukr.dailyProfit }}</span>
           </p>
           <div class="grid mb-3 text-center main-section__btn-wrap">
             <div class="md:col-6 col-12">
@@ -33,8 +24,8 @@
                 class="w-full justify-content-center main-section__out-link p-button p-button-secondary"
               >
                 <i class="pi pi-sign-in mr-1"></i>
-                Registration</a
-              >
+                {{ loc.ukr.registration }}
+              </a>
             </div>
             <div class="md:col-6 col-12">
               <a
@@ -42,12 +33,12 @@
                 class="w-full justify-content-center main-section__out-link p-button text-white"
               >
                 <i class="pi pi-calculator mr-1"></i>
-                Calculate your profit</a
-              >
+                {{ loc.ukr.calculateProfit }}
+              </a>
             </div>
           </div>
 
-          <p class="mb-2">Download app:</p>
+          <p class="mb-2">{{ loc.ukr.downloadApp }}:</p>
           <div class="grid">
             <div class="col-6 md:col-auto">
               <a
@@ -78,28 +69,26 @@
         <div class="col-12 lg:col-6">
           <div class="grid align-items-center mb-2">
             <div class="col-10">
-              <h2>What is Quantitative Trading?</h2>
+              <h2>{{ loc.ukr.esom.whatQuantTr }}</h2>
             </div>
             <div class="col-2">
               <i class="heading-icon pi pi-bolt"></i>
             </div>
           </div>
           <p class="mb-3">
-            Quantitative trading involves the use of computer algorithms and
-            programs based on simple or complex mathematical models to identify
-            and capitalize on available trading opportunities.
+            {{ loc.ukr.esom.quantitativeTrading }}
           </p>
           <p class="mb-2">
-            Official website:
+            {{ loc.ukr.officialWebsite }}:
             <a
-              href="https://www.esomgroup.org/"
-              target="_blank"
-              class="no-underline text-cyan-500"
-              ><i class="pi pi-check"></i> ESOM</a
+            href="https://www.esomgroup.org/"
+            target="_blank"
+            class="no-underline text-cyan-500"
+            ><i class="pi pi-check"></i> ESOM</a
             >
           </p>
           <p class="mb-2">
-            Web app:
+            {{ loc.ukr.webApp }}:
             <a
               href="https://www.es-glzx.com"
               target="_blank"
@@ -115,6 +104,9 @@
 
 <script setup>
   import BgAnim from '@/components/BgAnim.vue';
+  import { computed } from 'vue';
+  import locales from '@/locales';
+  const loc = computed(() => locales);
 </script>
 
 <style lang="scss" scoped>

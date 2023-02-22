@@ -1,6 +1,11 @@
 <script setup>
   import BlockAnim from '@/components/BlockAnim.vue';
   import { RouterLink } from 'vue-router';
+  import { computed } from 'vue';
+  import locales from '@/locales';
+  
+  const loc = computed(() => locales);
+  
 
   // import ListBots from '@/sections/ListBots.vue';
 </script>
@@ -10,22 +15,16 @@
       <div class="container h-full">
         <div class="grid align-items-center h-full">
           <div class="lg:col-6">
-            <h1 class="mb-3">Welcome to Your Invest project!</h1>
+            <h1 class="mb-3">{{ loc.ukr.welcomeHeading }}</h1>
             <p class="mb-4">
-              Trader Bots! We provide you overview the best automated trading
-              bots that use powerful AI algorithms to maximize your returns in
-              the cryptocurrency market. With these bots, you get access to
-              advanced trading strategies, monitoring, and analysis tools to
-              maximize your earnings. These bots are designed to help you become
-              a successful investor in the crypto space. <br />
-              Sign up today and start trading like a pro!
+              {{ loc.ukr.welcomeMsg }}
             </p>
             <RouterLink
               to="/esom"
               class="p-button p-button-secondary no-underline pl-4 pr-4"
-              >Get start</RouterLink
+              >{{ loc.ukr.getStart }}</RouterLink
             >
-            <p class="text-xs">More projects coming soon ...</p>
+            <p class="text-xs">{{ loc.ukr.moreProject }}</p>
           </div>
           <BlockAnim class="block-anim" />
         </div>

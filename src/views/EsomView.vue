@@ -9,9 +9,9 @@
             <Esom class="mb-3" />
             <LinksSection />
             <div class="text-center">
-              <p>Any questions? / Help with registration</p>
+              <p>{{ loc.ukr.anyQuestions }}</p>
               <p>
-                Contact me:
+                <p>{{ loc.ukr.contactMe }}:</p>
                 <a href="mailto:your.invest.anderson@gmail.com"
                   >your.invest.anderson@gmail.com</a
                 >
@@ -31,6 +31,10 @@
   import RegistrationSection from '../sections/esom/RegistrationSection.vue';
   import LinksSection from '../sections/esom/LinksSection.vue';
   import Esom from '@/components/CalcEsom.vue';
+  import locales from '@/locales';
+  import { computed } from 'vue';
+  
+  const loc = computed(() => locales);
 </script>
 
 <style lang="scss" scoped></style>

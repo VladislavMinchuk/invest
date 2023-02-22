@@ -1,7 +1,8 @@
 <script>
-  import { ref } from 'vue';
+  import { ref, computed } from 'vue';
   import Menubar from 'primevue/menubar';
   import Logo from '@/components/TheLogo.vue';
+  import locales from '@/locales';
 
   export default {
     components: {
@@ -11,12 +12,12 @@
     setup() {
       const items = ref([
         {
-          label: 'Home',
+          label: locales.ukr.nav.home,
           icon: 'pi pi-fw pi-home customer-badge',
           to: '/',
         },
         {
-          label: 'Projects',
+          label: locales.ukr.nav.projects,
           icon: 'pi pi-fw pi-bitcoin',
           items: [
             {
@@ -26,7 +27,7 @@
           ],
         },
         {
-          label: 'Profit calculation',
+          label: locales.ukr.nav.profitCalculation,
           icon: 'pi pi-fw pi-calculator',
           items: [
             {
@@ -40,7 +41,7 @@
           ],
         },
       ]);
-
+      
       return { items };
     },
   };
