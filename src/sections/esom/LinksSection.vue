@@ -1,13 +1,20 @@
 <template>
   <div class="text-center">
-    <a
-      href="https://www.es-glzx.com/#/pages/login/register?invitecode=27CyYD"
-      target="_blank"
-      class="w-full md:w-3 justify-content-center main-section__out-link p-button p-button-secondary no-underline mb-2"
-    >
-      <i class="pi pi-sign-in mr-1"></i>
-      Registration</a
-    >
+    <div class="btns-wrap">
+      <a
+        href="https://www.es-glzx.com/#/pages/login/register?invitecode=27CyYD"
+        target="_blank"
+        class="w-full md:w-5 justify-content-center main-section__out-link p-button p-button-secondary no-underline mb-2"
+      >
+        <i class="pi pi-sign-in mr-1"></i>
+        Registration
+      </a>
+      <router-link v-if="!isGuidePage" to="/esom" class="w-full md:w-5 justify-content-center main-section__out-link p-button p-button-info no-underline mb-2">
+        <i class="pi pi-book mr-1"></i>
+        Registration guide
+      </router-link>
+      <!-- <router-link to="/esom">Registration guide</router-link> -->
+    </div>
     <span class="block text-xl font-bold mb-2">Daily profit: 2.5% - 3%</span>
     <p class="mb-2">
       Official website:
@@ -53,6 +60,19 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+  import { RouterLink, useRoute } from 'vue-router';
+  import { computed } from 'vue';
+  
+  const route = useRoute();
+  const isGuidePage = computed(() => route.name === 'esom');
+</script>
 
-<style></style>
+<style lang="scss" scoped>
+  .btns-wrap {
+    @media screen and (min-width: 768px) {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+</style>

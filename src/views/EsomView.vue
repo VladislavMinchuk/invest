@@ -2,7 +2,7 @@
   <div class="esom-view-page">
     <PreviewSection />
     <RegistrationSection />
-    <sectioin>
+    <section>
       <div id="calc" class="container">
         <div class="grid justify-content-center pb-6">
           <div class="col-12 md:col-8">
@@ -20,7 +20,7 @@
           </div>
         </div>
       </div>
-    </sectioin>
+    </section>
     <ScrollTop />
   </div>
 </template>
