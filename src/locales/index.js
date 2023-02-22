@@ -1,7 +1,7 @@
 export default {
   en: {
     welcomeHeading: 'Welcome to Your Invest project!',
-    welcomeMsg: 'Trader Bots! We provide you overview the best automated trading bots that use powerful AI algorithms to maximize your returns in the cryptocurrency market. With these bots, you get access to advanced trading strategies, monitoring, and analysis tools to maximize your earnings. These bots are designed to help you become a successful investor in the crypto space. Sign up today and start trading like a pro!',
+    welcomeMsg: 'We provide you overview the best automated trading bots that use powerful AI algorithms to maximize your returns in the cryptocurrency market. With these bots, you get access to advanced trading strategies, monitoring, and analysis tools to maximize your earnings. These bots are designed to help you become a successful investor in the crypto space. Sign up today and start trading like a pro!',
     getStart: 'Get start now',
     moreProject: 'More projects coming soon...',
     nav: {
@@ -49,7 +49,7 @@ export default {
   },
   ukr: {
     welcomeHeading: 'Ласкаво просимо до проекту Your Invest!',
-    welcomeMsg: 'Торгові боти! Ми пропонуємо вам огляд найкращих автоматичних торгових ботів, які використовують потужні алгоритми ШІ, щоб максимізувати ваші прибутки на ринку криптовалют. За допомогою цих ботів ви отримуєте доступ до передових торгових стратегій, інструментів моніторингу та аналізу, щоб максимізувати свої прибутки. Ці боти розроблені, щоб допомогти вам стати успішним інвестором у криптопростір. Зареєструйтеся сьогодні та почніть торгувати як професіонал!',
+    welcomeMsg: 'Ми пропонуємо вам огляд найкращих автоматичних торгових ботів, які використовують потужні алгоритми ШІ, щоб максимізувати ваші прибутки на ринку криптовалют. За допомогою цих ботів ви отримуєте доступ до передових торгових стратегій, інструментів моніторингу та аналізу, щоб максимізувати свої прибутки. Ці боти розроблені, щоб допомогти вам стати успішним інвестором у криптопростір. Зареєструйтеся сьогодні та почніть торгувати як професіонал!',
     getStart: 'Почніть зараз',
     moreProject: 'Незабаром більше проектів...',
     nav: {
