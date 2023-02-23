@@ -12,10 +12,6 @@
       <div class="container h-full">
         <div class="grid align-items-center h-full">
           <div class="lg:col-6">
-            <!-- <select v-model="$i18n.locale">
-              <option value="en">en</option>
-              <option value="ukr">ukr</option>
-            </select> -->
             <h1 class="mb-3">{{ t('welcomeHeading') }}</h1>
             <p class="mb-4">
               {{ t('welcomeMsg') }}
