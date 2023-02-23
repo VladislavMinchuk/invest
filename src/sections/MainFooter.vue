@@ -1,10 +1,9 @@
 <script setup>
   import Logo from '@/components/TheLogo.vue';
   import { RouterLink } from 'vue-router';
-  import { computed } from 'vue';
-  import locales from '@/locales';
-  const loc = computed(() => locales);
+  import { useI18n } from 'vue-i18n';
   
+  const { t } = useI18n();
 </script>
 
 <template>
@@ -14,24 +13,24 @@
         <div class="col-12 md:col-6 lg:col-3">
           <Logo class="mb-3" />
           <p class="mb-3">Copyright<span>&#169;</span>2023. Your Invest</p>
-          <p>{{ loc.ukr.contactUs }}:</p>
+          <p>{{ t('contactUs') }}:</p>
           <a href="mailto:your.invest.anderson@gmail.com"
             >your.invest.anderson@gmail.com</a
           >
         </div>
         <div class="col-12 md:col-6 lg:col-3">
-          <h4 class="mb-3">{{ loc.ukr.mainPages }}</h4>
-          <RouterLink to="/">{{ loc.ukr.nav.home }}</RouterLink>
+          <h4 class="mb-3">{{ t('mainPages') }}</h4>
+          <RouterLink to="/">{{ t('nav.home') }}</RouterLink>
         </div>
         <div class="col-12 md:col-6 lg:col-3">
           <h4 class="mb-3">
-            {{ loc.ukr.nav.projects }}
-            <span class="text-xs">({{ loc.ukr.moreProject }})</span>
+            {{ t('nav.projects') }}
+            <span class="text-xs">({{ t('moreProject') }})</span>
           </h4>
           <RouterLink to="/esom">ESOM</RouterLink>
         </div>
         <div class="col-12 md:col-6 lg:col-3">
-          <h4 class="mb-3">{{ loc.ukr.nav.profitCalculation }}</h4>
+          <h4 class="mb-3">{{ t('nav.profitCalculation') }}</h4>
           <RouterLink to="/calculation/esom">ESOM</RouterLink>
         </div>
       </div>

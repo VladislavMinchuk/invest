@@ -2,22 +2,24 @@
   import { ref, computed } from 'vue';
   import Menubar from 'primevue/menubar';
   import Logo from '@/components/TheLogo.vue';
-  import locales from '@/locales';
-
+  import { useI18n } from 'vue-i18n';
+  
   export default {
     components: {
       Menubar,
       Logo,
     },
     setup() {
+      const { t } = useI18n() ;
+      
       const items = ref([
         {
-          label: locales.ukr.nav.home,
+          label: t('nav.home'),
           icon: 'pi pi-fw pi-home customer-badge',
           to: '/',
         },
         {
-          label: locales.ukr.nav.projects,
+          label: t('nav.projects'),
           icon: 'pi pi-fw pi-bitcoin',
           items: [
             {
@@ -27,7 +29,7 @@
           ],
         },
         {
-          label: locales.ukr.nav.profitCalculation,
+          label: t('nav.profitCalculation'),
           icon: 'pi pi-fw pi-calculator',
           items: [
             {

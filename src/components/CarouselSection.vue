@@ -11,7 +11,7 @@
         <i v-if="icon" :class="icon" class="pi pi-money-bill"></i> {{ heading }}
       </h2>
       <p>
-        <i class="pi pi-arrow-down"></i> {{ clickText }}
+        <i class="pi pi-arrow-down"></i> {{ clickText || t('clickImageZoom') }}
         <i class="pi pi-arrow-down"></i>
       </p>
       <Carousel
@@ -39,17 +39,18 @@
 <script setup>
   import { ref } from 'vue';
   import Carousel from 'primevue/carousel';
-  import locales from '@/locales';
-
+  import { useI18n } from 'vue-i18n';
+  
   defineProps({
     heading: String,
     clickText: {
       type: String,
-      default: locales.ukr.clickImageZoom,
     },
     icon: String,
     imagesArr: Array,
   });
+  
+  const { t } = useI18n();
   
   const responsiveOptions = ref([
     // {

@@ -13,8 +13,8 @@
             </div>
           </div>
           <p class="mb-4">
-            {{ loc.ukr.esom.overviewMsg }}
-            <span class="block text-xl font-bold pt-2">{{ loc.ukr.dailyProfit }}</span>
+            {{ t('esom.overviewMsg') }}
+            <span class="block text-xl font-bold pt-2">{{ t('dailyProfit') }}</span>
           </p>
           <div class="grid mb-3 text-center main-section__btn-wrap">
             <div class="md:col-6 col-12">
@@ -24,7 +24,7 @@
                 class="w-full justify-content-center main-section__out-link p-button p-button-secondary"
               >
                 <i class="pi pi-sign-in mr-1"></i>
-                {{ loc.ukr.registration }}
+                {{ t('registration') }}
               </a>
             </div>
             <div class="md:col-6 col-12">
@@ -33,12 +33,12 @@
                 class="w-full justify-content-center main-section__out-link p-button text-white"
               >
                 <i class="pi pi-calculator mr-1"></i>
-                {{ loc.ukr.calculateProfit }}
+                {{ t('calculateProfit') }}
               </a>
             </div>
           </div>
 
-          <p class="mb-2">{{ loc.ukr.downloadApp }}:</p>
+          <p class="mb-2">{{ t('downloadApp') }}:</p>
           <div class="grid">
             <div class="col-6 md:col-auto">
               <a
@@ -69,17 +69,17 @@
         <div class="col-12 lg:col-6">
           <div class="grid align-items-center mb-2">
             <div class="col-10">
-              <h2>{{ loc.ukr.esom.whatQuantTr }}</h2>
+              <h2>{{ t('esom.whatQuantTr') }}</h2>
             </div>
             <div class="col-2">
               <i class="heading-icon pi pi-bolt"></i>
             </div>
           </div>
           <p class="mb-3">
-            {{ loc.ukr.esom.quantitativeTrading }}
+            {{ t('esom.quantitativeTrading') }}
           </p>
           <p class="mb-2">
-            {{ loc.ukr.officialWebsite }}:
+            {{ t('officialWebsite') }}:
             <a
             href="https://www.esomgroup.org/"
             target="_blank"
@@ -88,7 +88,7 @@
             >
           </p>
           <p class="mb-2">
-            {{ loc.ukr.webApp }}:
+            {{ t('webApp') }}:
             <a
               href="https://www.es-glzx.com"
               target="_blank"
@@ -104,9 +104,9 @@
 
 <script setup>
   import BgAnim from '@/components/BgAnim.vue';
-  import { computed } from 'vue';
-  import locales from '@/locales';
-  const loc = computed(() => locales);
+  import { useI18n } from 'vue-i18n';
+  
+  const { t } = useI18n();
 </script>
 
 <style lang="scss" scoped>

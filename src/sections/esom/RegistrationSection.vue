@@ -2,25 +2,25 @@
   <section class="regis_section pt-6 pb-6">
     <CarouselSection
       :imagesArr="imgRegist"
-      :heading="`${loc.ukr.registration} (${loc.ukr.invitationCode})`"
+      :heading="`${t('registration')} (${t('invitationCode')})`"
       icon="pi-sign-in"
       class="text-center"
     />
     <CarouselSection
       :imagesArr="imgs"
-      :heading="loc.ukr.recharging"
+      :heading="t('recharging')"
       icon="pi-money-bill"
       class="text-center"
     />
     <CarouselSection
       :imagesArr="withdrawImgs"
-      :heading="locales.ukr.withdraw"
+      :heading="t('withdraw')"
       icon="pi-wallet"
       class="text-center"
     />
     <CarouselSection
       :imagesArr="inviteImgs"
-      :heading="locales.ukr.inviteFrends"
+      :heading="t('inviteFrends')"
       icon="pi-users"
       class="text-center"
     />
@@ -29,8 +29,8 @@
 
 <script setup>
   import CarouselSection from '@/components/CarouselSection.vue';
-  import { ref, computed } from 'vue';
-  import locales from '@/locales';
+  import { ref } from 'vue';
+  import { useI18n } from 'vue-i18n';
   import regis from '@/assets/images/regist.jpg';
   import rech_link from '@/assets/images/rech_link.jpg';
   import rech_amount from '@/assets/images/rech_amount.jpg';
@@ -45,7 +45,7 @@
   import inv_link from '@/assets/images/inv_link.jpg';
   import inv_table from '@/assets/images/inv_table.jpg';
   
-  const loc = computed(() => locales);
+  const { t } = useI18n();
 
   const imgRegist = ref([
     {
@@ -55,55 +55,55 @@
   const imgs = ref([
     {
       src: rech_link,
-      title: locales.ukr.recharging,
+      title: t('recharging'),
     },
     {
       src: rech_amount,
-      title: locales.ukr.recharging,
+      title: t('recharging'),
     },
     {
       src: rech_adrs,
-      title: locales.ukr.recharging,
+      title: t('recharging'),
     },
     {
       src: rech_list_link,
-      title: locales.ukr.checkYourRecharging,
+      title: t('checkYourRecharging'),
     },
     {
       src: rech_list,
-      title: locales.ukr.yourRecharging,
+      title: t('yourRecharging'),
     },
   ]);
   const withdrawImgs = ref([
     {
       src: with_link,
-      title: locales.ukr.withdraw,
+      title: t('withdraw'),
     },
     {
       src: with_2s,
-      title: locales.ukr.withdraw,
+      title: t('withdraw'),
     },
     {
       src: with_list,
-      title: locales.ukr.checkYourRecharging,
+      title: t('checkYourRecharging'),
     },
     {
       src: with_my_list,
-      title: locales.ukr.yourRecharging,
+      title: t('yourRecharging'),
     },
     {
       src: wall_adr,
-      title: locales.ukr.setWalletAddress,
+      title: t('setWalletAddress'),
     },
   ]);
   const inviteImgs = ref([
     {
       src: inv_link,
-      title: locales.ukr.inviteLink,
+      title: t('inviteLink'),
     },
     {
       src: inv_table,
-      title: locales.ukr.commissionRate,
+      title: t('commissionRate'),
     },
   ]);
 </script>

@@ -5,9 +5,9 @@
   import Dropdown from 'primevue/dropdown';
   import Button from 'primevue/button';
   import InlineMessage from 'primevue/inlinemessage';
-  import locales from '@/locales';
+  import { useI18n } from 'vue-i18n';
   
-  const loc = computed(() => locales);
+  const { t } = useI18n();
   const income = ref(0);
   const result = ref(0);
   const deposit = ref(10);
@@ -17,22 +17,22 @@
   // COMPUTED
   const strategies = computed(() => [
     {
-      text: `2 ${locales.ukr.hours}`,
+      text: `2 ${t('hours')}`,
       value: 0.25,
       hours: 2,
     },
     {
-      text: `12 ${locales.ukr.hours}`,
+      text: `12 ${t('hours')}`,
       value: 1.5,
       hours: 12,
     },
     {
-      text: `24 ${locales.ukr.hours}`,
+      text: `24 ${t('hours')}`,
       value: 3,
       hours: 24,
     },
     {
-      text: `72 ${locales.ukr.hours}`,
+      text: `72 ${t('hours')}`,
       value: 9,
       hours: 72,
     },
@@ -45,7 +45,7 @@
     for (let index = 1; index <= 30; index++) {
       const hours = selectedhours.value * index;
       const days = hours % 24 === 0 ? hours / 24 : 0;
-      const textValue = days ? `${days} ${locales.ukr.days}` : `${hours} ${locales.ukr.hours}`;
+      const textValue = days ? `${days} ${t('days')}` : `${hours} ${t('hours')}`;
       arr.push({ text: textValue, value: index });
     }
     return arr;
@@ -73,10 +73,10 @@
 </script>
 
 <template>
-  <Panel :header="`${loc.ukr.calculateProfit} (ESOM)`">
+  <Panel :header="`${t('calculateProfit')} (ESOM)`">
     <div class="grid">
       <div class="col-12 field mb-2">
-        <label for="deposit" class="text-sm">{{ loc.ukr.deposit }}</label>
+        <label for="deposit" class="text-sm">{{ t('deposit') }}</label>
         <div class="p-inputgroup">
           <span class="p-inputgroup-addon">$</span>
           <InputNumber
@@ -93,7 +93,7 @@
       </div>
 
       <div class="col-12 field mb-2">
-        <label for="strategy" class="text-sm">{{ loc.ukr.strategy }}</label>
+        <label for="strategy" class="text-sm">{{ t('strategy') }}</label>
         <Dropdown
           inputId="strategy"
           v-model="selectedStrategy"
@@ -106,7 +106,7 @@
       </div>
 
       <div class="col-12 field mb-2">
-        <label for="strategies" class="text-sm">{{ loc.ukr.period }}</label>
+        <label for="strategies" class="text-sm">{{ t('period') }}</label>
         <Dropdown
           id="strategies"
           v-model="selectedPeriod"
@@ -119,13 +119,13 @@
       </div>
       <div class="col-12" v-if="result">
         <div class="mb-2">
-          <p class="m-0 mb-3">{{ loc.ukr.approximately }}:</p>
-          <InlineMessage severity="success">{{ loc.ukr.totalAmount }}: ~{{ result }}
+          <p class="m-0 mb-3">{{ t('approximately') }}:</p>
+          <InlineMessage severity="success">{{ t('totalAmount') }}: ~{{ result }}
             <span>$</span>
           </InlineMessage>
         </div>
         <div class="mb-2">
-          <InlineMessage severity="success">{{ loc.ukr.personalIncome }}: ~{{ income }}
+          <InlineMessage severity="success">{{ t('personalIncome') }}: ~{{ income }}
             <span>$</span>
           </InlineMessage>
         </div>
@@ -134,7 +134,7 @@
         <Button
           @click="calcPercent"
           class="w-full md:w-min"
-          :label="loc.ukr.calculate"
+          :label="t('calculate')"
           icon="pi pi-calculator"
         />
       </div>

@@ -1,12 +1,9 @@
 <script setup>
   import BlockAnim from '@/components/BlockAnim.vue';
   import { RouterLink } from 'vue-router';
-  import { computed } from 'vue';
-  import locales from '@/locales';
+  import { useI18n } from 'vue-i18n';
+  const { t } = useI18n() ;
   
-  const loc = computed(() => locales);
-  
-
   // import ListBots from '@/sections/ListBots.vue';
 </script>
 <template>
@@ -15,16 +12,20 @@
       <div class="container h-full">
         <div class="grid align-items-center h-full">
           <div class="lg:col-6">
-            <h1 class="mb-3">{{ loc.ukr.welcomeHeading }}</h1>
+            <!-- <select v-model="$i18n.locale">
+              <option value="en">en</option>
+              <option value="ukr">ukr</option>
+            </select> -->
+            <h1 class="mb-3">{{ t('welcomeHeading') }}</h1>
             <p class="mb-4">
-              {{ loc.ukr.welcomeMsg }}
+              {{ t('welcomeMsg') }}
             </p>
             <RouterLink
               to="/esom"
               class="p-button p-button-secondary no-underline pl-4 pr-4"
-              >{{ loc.ukr.getStart }}</RouterLink
+              >{{ t('getStart') }}</RouterLink
             >
-            <p class="text-xs">{{ loc.ukr.moreProject }}</p>
+            <p class="text-xs">{{ t('moreProject') }}</p>
           </div>
           <BlockAnim class="block-anim" />
         </div>
